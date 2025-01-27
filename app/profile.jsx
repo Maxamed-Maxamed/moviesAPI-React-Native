@@ -5,7 +5,7 @@ import React from 'react'
 const profile = () => {
   return (
     <View style={styles.container}>
-      <Text>profile</Text> 
+      <Text style={styles.text}>profile</Text> 
     </View>
   )
 }
@@ -18,7 +18,8 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
     },
-    link: {
+    text: {
         color: 'blue',
     },
+    
 })
