@@ -2,7 +2,8 @@ import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import {Slot, Stack} from 'expo-router'
 import { StatusBar } from 'expo-status-bar';
-
+// Import your global CSS file
+import "../global.css";
 
 const _RooyLayout = () => {
   return (
