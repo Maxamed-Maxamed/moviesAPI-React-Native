@@ -3,8 +3,7 @@ import React from 'react'
 import {Slot, Stack} from 'expo-router'
 import { StatusBar } from 'expo-status-bar';
 // Import your global CSS file
-import "../global.css";
-
+import "../styles/global.styles.css"
 const _RooyLayout = () => {
   return (
    
