@@ -3,7 +3,7 @@ import React from 'react'
 import {Link} from 'expo-router'
 import { Slot, Stack } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
-import "../styles/global.styles.css"
+// import "../styles/global.styles.css"
 
 const profile = () => {
   return (
@@ -14,15 +14,3 @@ const profile = () => {
 }
 
 export default profile
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
-    text: {
-        color: 'blue',
-    },
-    
-})

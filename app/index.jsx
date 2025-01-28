@@ -12,7 +12,7 @@ export default function App() {
       <View className="flex-1 items-center justify-center bg-white">
         <Text className="text-3xl font-pblack">AORA!</Text>
         
-        <Link href="/profile" className="text-blue-500">Profile</Link>
+        <Link href="/home" className="text-blue-500">Home</Link>
         <StatusBar style="auto" />
       </View>
     )
