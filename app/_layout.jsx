@@ -6,6 +6,8 @@ import { useFonts } from 'expo-font';
 import { useEffect } from 'react';
 import { Stack, SplashScreen } from 'expo-router';
 
+SplashScreen.preventAutoHideAsync(); // Prevent the splash screen from auto-hiding
+
 const RootLayout = () => {
   const [fontsLoaded, error] = useFonts({
     "Poppins-Black": require("../assets/fonts/Poppins-Black.ttf"),
@@ -20,11 +22,12 @@ const RootLayout = () => {
   });
 
   useEffect(() => {
-    if (error) throw error;
-    if(fontsLoaded) SplashScreen.hideAsync();
-  }, [fontsLoaded, error]);
+    if (error) throw error;  // If there is an error, throw it to stop further execution
+    if (fontsLoaded) SplashScreen.hideAsync();  // If fonts are loaded, hide the splash screen
+}, [fontsLoaded, error]); // Dependencies array: effect runs when `fontsLoaded` or `error` changes 
 
-  if (!fontsLoaded && !error) return null;
+if (!fontsLoaded && !error) return null; // If fonts are not loaded and there is no error, return null (don't render anything)
+
   
   return (
     <>
