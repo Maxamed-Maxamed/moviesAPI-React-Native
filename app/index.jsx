@@ -1,19 +1,18 @@
-import { Text, StyleSheet, View, StatusBar, Image } from 'react-native'
+import { Text, StyleSheet, View,  Image } from 'react-native'
 // import "../styles/global.styles.css"
-import { SplashScreen } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { ScrollView } from 'react-native';
 import { images } from '../constants';
 import CustomButton from '../components/custom/CustomButton';
+import { Redirect, router } from 'expo-router';
 
-
-SplashScreen.preventAutoHideAsync(); // Prevent the splash screen from auto-hiding
+import { StatusBar } from 'expo-status-bar';
 
 export default function App() {
   return (
     <SafeAreaView className='bg-primary h-full'>
       <ScrollView contentContainerStyle={{ height: '100%' }}>
-        <View className='w-full justify-center items-center h-full px-4'>
+        <View className='w-full justify-center items-center min-h-[85vh] px-4'>
           <Image
             source={images.logo}
             className='w-[130px] h-[84px]'
@@ -44,12 +43,42 @@ export default function App() {
           </Text>
           
 
-          <CustomButton>
-      
-          </CustomButton>
+          <CustomButton
+            title="Continue with Email"
+            handlePress={() => {
+              router.push('/sign-in')
+              console.log("Pressed");
+             }}
+             containerStyles="w-full mt-3 mb-3"
+
+          
+          />
+            
           
         </View>
       </ScrollView>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <StatusBar backgroundColor='#161622' style='light' /> 
     </SafeAreaView>
   );
 }

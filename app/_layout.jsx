@@ -33,7 +33,6 @@ if (!fontsLoaded && !error) return null; // If fonts are not loaded and there is
     <>
      <Stack>
       <Stack.Screen name="index" options={{ headerShown: false }} />
-      <StatusBar style="light" />
     </Stack>
     </>
   );
