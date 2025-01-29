@@ -1,14 +1,10 @@
 import { Text, StyleSheet, View, StatusBar, Image } from 'react-native'
-import { Link } from 'expo-router'
-import "../styles/global.styles.css"
+// import "../styles/global.styles.css"
 import { SplashScreen } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { useState } from 'react';
-import { useFonts } from 'expo-font';
-import { useEffect } from 'react';
-
 import { ScrollView } from 'react-native';
-import { Images, images } from '../constants';
+import { images } from '../constants';
+import CustomButton from '../components/custom/CustomButton';
 
 
 SplashScreen.preventAutoHideAsync(); // Prevent the splash screen from auto-hiding
@@ -46,6 +42,11 @@ export default function App() {
           Where Creativity Meets Innovation: Embark on a Journey of Limitless
           Exploration with Aora
           </Text>
+          
+
+          <CustomButton>
+      
+          </CustomButton>
           
         </View>
       </ScrollView>
