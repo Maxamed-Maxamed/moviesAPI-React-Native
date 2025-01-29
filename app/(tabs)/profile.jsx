@@ -7,8 +7,8 @@ import { StatusBar } from 'expo-status-bar';
 
 const profile = () => {
   return (
-    <View style={styles.container}>
-      <Text style={styles.text}>profile</Text> 
+    <View >
+      <Text >profile</Text> 
     </View>
   )
 }
