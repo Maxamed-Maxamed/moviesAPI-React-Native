@@ -47,11 +47,10 @@ export default function App() {
             title="Continue with Email"
             handlePress={() => {
               router.push('/sign-in')
-              console.log("Pressed");
              }}
-             containerStyles="w-full mt-3 mb-3"
-
-          
+             containerStyles={"bg-secondary-200 rounded-xl  min-h-[62px] w-full flex justify-center items-center mt-5 mb-5"}
+             textStyles={"text-primary font-psemibold text-lg"}
+             
           />
             
           
