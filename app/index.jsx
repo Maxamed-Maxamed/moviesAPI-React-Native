@@ -1,4 +1,4 @@
-import { Text, StyleSheet, View,  Image } from 'react-native'
+import { Text, StyleSheet, View, Image } from 'react-native'
 // import "../styles/global.styles.css"
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { ScrollView } from 'react-native';
@@ -36,48 +36,22 @@ export default function App() {
               resizeMode="contain"
             />
           </View>
-          {/* <Text className='text-white text-center mt-5'> */}
           <Text className='text-sm font-pregular text-white text-center mt-5 mb-5'>
-          Where Creativity Meets Innovation: Embark on a Journey of Limitless
-          Exploration with Aora
+            Where Creativity Meets Innovation: Embark on a Journey of Limitless
+            Exploration with Aora
           </Text>
-          
 
           <CustomButton
             title="Continue with Email"
             handlePress={() => {
               router.push('/sign-in')
-             }}
-             containerStyles={"bg-secondary-200 rounded-xl  min-h-[62px] w-full flex justify-center items-center mt-5 mb-5"}
-             textStyles={"text-primary font-psemibold text-lg"}
-             
+            }}
+            containerStyles={"bg-secondary-200 rounded-xl  min-h-[62px] w-full flex justify-center items-center mt-5 mb-5"}
+            textStyles={"text-primary font-psemibold text-lg"}
           />
-            
-          
         </View>
       </ScrollView>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      <StatusBar backgroundColor='#161622' style='light' /> 
+      <StatusBar backgroundColor='#161622' style='light' />
     </SafeAreaView>
   );
 }
