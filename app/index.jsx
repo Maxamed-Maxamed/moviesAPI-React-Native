@@ -41,13 +41,13 @@ export default function App() {
             Exploration with Aora
           </Text>
 
-          <CustomButton
+    
+            <CustomButton
             title="Continue with Email"
             handlePress={() => {
-              router.push('/sign-in')
-            }}
-            containerStyles={"bg-secondary-200 rounded-xl  min-h-[62px] w-full flex justify-center items-center mt-5 mb-5"}
-            textStyles={"text-primary font-psemibold text-lg"}
+                router.push('/sign-in')
+              }}
+               containerStyles="w-full mt-7"
           />
         </View>
       </ScrollView>
