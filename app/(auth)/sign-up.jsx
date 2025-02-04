@@ -8,6 +8,8 @@ import { useState } from 'react'
 import CustomerButton from "../../components/custom/CustomButton" // use this import from on to the every application component no what the name of the component is
 import { Alert } from 'react-native'
 import { Link } from 'expo-router'
+// import { createUser } from '../../lib/appwrite'
+import { createUser } from '../../lib/appwrite'
 
 const SignUp = () => {
   const[form, setForm] = useState({
@@ -19,6 +21,7 @@ const SignUp = () => {
 const [isSubmitting, setisSubmitting] = useState(false)
 
 const submit = () => {
+  createUser();
 }
 
 
