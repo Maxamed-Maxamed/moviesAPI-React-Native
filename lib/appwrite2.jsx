@@ -36,7 +36,7 @@ export const createUser = async (username,  email, password) => {{
 
        const avatarURL = avatars.getInitials(username);
 
-       await SignIn(email, password);
+       await signIn(email, password);
 
 
 
@@ -64,16 +64,15 @@ export const createUser = async (username,  email, password) => {{
 };
 
 // Sign In
-export async function SignIn(email, password) {
+export async function signIn(email, password) {
     try {
+        // Check for existing session first
+        const currentUser = await account.get();
+        if(currentUser) {
+            await account.deleteSession('current');
+        }
+        
         const session = await account.createEmailPasswordSession(email, password);
-        if(session) {
-            console.log('Sign in successful');
-        }
-        else {
-            console.log('Sign in failed');
-            throw new Error('Sign in failed');
-        }
         return session;
     } catch (error) {
         console.log(error);

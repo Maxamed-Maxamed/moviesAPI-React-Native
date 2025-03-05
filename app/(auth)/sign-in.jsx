@@ -8,6 +8,8 @@ import { useState } from 'react'
 import CustomerButton from "../../components/custom/CustomButton" // use this import from on to the every application component no what the name of the component is
 import { Alert } from 'react-native'
 import { Link } from 'expo-router'
+import { router } from 'expo-router'
+import { signIn } from '../../lib/appwrite2'
 
 
 
@@ -17,9 +19,29 @@ const SignIn = () => {
     password: '',
   })
 
-const [isSubmitting, setisSubmitting] = useState(false)
+const [isSubmitting, setIsSubmitting] = useState(false)
 
-const submit = () => {
+const submit =  async () => {
+  if(!form.email || !form.password) {
+    Alert.alert('All fields are required')
+    return
+  }
+  setIsSubmitting(true)
+
+  try{
+    const result = await signIn(form.email, form.password)
+    if(result) {
+      setIsSubmitting(false)
+    }
+    router.replace('/home')
+  }
+  catch(error) {
+    Alert.alert('Error', error.message)
+    setIsSubmitting(false)
+  }
+
+ 
+  
 }
 
 
