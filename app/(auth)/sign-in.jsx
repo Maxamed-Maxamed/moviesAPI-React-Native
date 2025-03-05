@@ -9,7 +9,7 @@ import CustomerButton from "../../components/custom/CustomButton" // use this im
 import { Alert } from 'react-native'
 import { Link } from 'expo-router'
 import { router } from 'expo-router'
-import { signIn } from '../../lib/appwrite2'
+import { signIn } from '../../lib/appwrite'
 
 
 

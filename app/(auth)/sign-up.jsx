@@ -10,7 +10,7 @@ import { Alert } from 'react-native'
 import { Link, router } from "expo-router";
 // import { createUser } from '../../lib/appwrite'
 // import { createUser } from '../../lib/appwrite'
-import { createUser } from '../../lib/appwrite2'
+import { createUser } from '../../lib/appwrite'
 const SignUp = () => {
   const[form, setForm] = useState({
     username: '',
