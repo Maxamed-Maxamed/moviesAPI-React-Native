@@ -1,5 +1,5 @@
 import 'react-native-url-polyfill/auto'
-import { Client, Account, ID, Avatars, Databases} from 'react-native-appwrite';
+import { Client, Account, ID, Avatars, Databases, Query} from 'react-native-appwrite';
 export const  config = {
     endpoint: 'https://cloud.appwrite.io/v1',
     platform: 'com.company.maxmovies',
@@ -64,7 +64,7 @@ export const createUser = async (username,  email, password) => {{
 };
 
 // Sign In
-export async function signIn(email, password) {
+export const signIn = async (email, password) => {
     try {
         // Check for existing session first
         const currentUser = await account.get();
@@ -82,14 +82,20 @@ export async function signIn(email, password) {
 
 
 
+export const getCurrentUser = async () => {
+    try {
+        // Check for existing session first
+      const currentAccount = await account.get();
+      if(!currentAccount) throw new Error('No user found');
 
-
-
-
-
-
-
-
-    // com.company.maxmovies
-    // max_course }
+    const currentUser = await databases.listDocuments(config.databaseId, config.userCollectionId, [
+        Query.equal('accountId', currentAccount.$id),
+      ]);
+      if(!currentUser) throw new Error('User not found');
+      return currentUser.documents[0];
+    } catch (error) {
+        console.log(error);
+        throw error;
+    }
+}
 
