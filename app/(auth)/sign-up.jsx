@@ -7,21 +7,40 @@ import FormField from '../../components/form/FormField' // use this import from 
 import { useState } from 'react'
 import CustomerButton from "../../components/custom/CustomButton" // use this import from on to the every application component no what the name of the component is
 import { Alert } from 'react-native'
-import { Link } from 'expo-router'
+import { Link, router } from "expo-router";
 // import { createUser } from '../../lib/appwrite'
-import { createUser } from '../../lib/appwrite'
-
+// import { createUser } from '../../lib/appwrite'
+import { createUser } from '../../lib/appwrite2'
 const SignUp = () => {
   const[form, setForm] = useState({
-    userName: '',
+    username: '',
     email: '',
     password: '',
   })
 
-const [isSubmitting, setisSubmitting] = useState(false)
+const [isSubmitting, setIsSubmitting] = useState(false)
 
-const submit = () => {
-  createUser();
+const submit =  async () => {
+  if(!form.username || !form.email || !form.password) {
+    Alert.alert('All fields are required')
+    return
+  }
+  setIsSubmitting(true)
+
+  try{
+    const result = await createUser(form.username, form.email, form.password)
+    if(result) {
+      setIsSubmitting(false)
+    }
+    router.replace('/home')
+  }
+  catch(error) {
+    Alert.alert('Error creating user')
+    setIsSubmitting(false)
+  }
+
+ 
+  
 }
 
 
@@ -37,8 +56,8 @@ const submit = () => {
             <Text className='text-2xl text-white font-semibold mt-10 font-psemibold'> Sign Up to Aora</Text>
             <FormField 
               title="Username"
-              value={form.userName}
-              handleChangeText={(e) => setForm({...form, userName: e})}
+              value={form.username}
+              handleChangeText={(e) => setForm({...form, username: e})}
               otherStyles="mt-10"
              
             />

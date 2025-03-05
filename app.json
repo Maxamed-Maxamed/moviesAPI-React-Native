@@ -10,15 +10,20 @@
     "newArchEnabled": true,
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.company.mymovies"
+      // "bundleIdentifier": "com.company.mymovies"
+      "bundleIdentifier": "com.company.maxmovies"
+      
+
     },
+
 
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.company.mymovies"
+      // "package": "com.company.mymovies"
+      "package": "com.company.maxmovies"
     },
     "web": {
       "bundler": "metro",
